@@ -2,6 +2,7 @@
 
 ### 基本仕様
 - STM32H563RGV6
+- 外部ROM(IS25LP064D-JLLE)を搭載する。
 - HSE・LSEを両方搭載する
 - MCUリセットスイッチを搭載する
 - デバッグ用にUSB-typeCを搭載する
