@@ -1,7 +1,7 @@
 ## ESC Control Hub 要件定義書
 
 ### 基本仕様
-- STM32H523
+- STM32H563RGV6
 - HSE・LSEを両方搭載する
 - MCUリセットスイッチを搭載する
 - デバッグ用にUSB-typeCを搭載する
