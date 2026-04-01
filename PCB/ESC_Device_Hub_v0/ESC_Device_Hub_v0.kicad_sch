@@ -8959,7 +8959,7 @@
 		)
 		(uuid "7c47e4af-579f-4f4c-9a13-51a763155f70")
 	)
-	(text "FDCAN x1"
+	(text "FDCAN x2"
 		(exclude_from_sim no)
 		(at 309.118 205.74 0)
 		(effects
@@ -8969,7 +8969,7 @@
 		)
 		(uuid "a89e1694-d493-4969-8818-b21ce9d09092")
 	)
-	(text "絶縁FDCAN x1"
+	(text "絶縁FDCAN x4"
 		(exclude_from_sim no)
 		(at 324.104 107.188 0)
 		(effects
