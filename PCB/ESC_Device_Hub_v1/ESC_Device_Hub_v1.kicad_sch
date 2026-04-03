@@ -9178,6 +9178,10 @@
 		(uuid "f7cf063d-9d07-4210-ac42-441bfe31c452")
 	)
 	(no_connect
+		(at 88.9 83.82)
+		(uuid "004f4c0c-1d68-440d-8cdb-89695ea8ed74")
+	)
+	(no_connect
 		(at 139.7 66.04)
 		(uuid "401198d5-a75e-4490-a70b-c17e29fc8830")
 	)
@@ -9188,6 +9192,10 @@
 	(no_connect
 		(at 320.04 74.93)
 		(uuid "80e79e6c-cc1f-4fd3-89b4-ed733f861f8d")
+	)
+	(no_connect
+		(at 88.9 86.36)
+		(uuid "9e1b11f6-488f-49e9-96d8-d59d010b6a58")
 	)
 	(no_connect
 		(at 88.9 71.12)
@@ -9830,7 +9838,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 40.64) (xy 241.3 41.91)
+			(xy 236.22 40.64) (xy 236.22 41.91)
 		)
 		(stroke
 			(width 0)
@@ -12300,7 +12308,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 41.91) (xy 238.76 41.91)
+			(xy 236.22 41.91) (xy 233.68 41.91)
 		)
 		(stroke
 			(width 0)
@@ -28669,7 +28677,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 241.3 40.64 0)
+		(at 236.22 40.64 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -28680,7 +28688,7 @@
 		(fields_autoplaced yes)
 		(uuid "8b1e2b15-774f-4dd1-bfad-cdafd86585a4")
 		(property "Reference" "#PWR068"
-			(at 241.3 44.45 0)
+			(at 236.22 44.45 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28691,7 +28699,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 241.3 35.56 0)
+			(at 236.22 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -28701,7 +28709,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 241.3 40.64 0)
+			(at 236.22 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28712,7 +28720,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 40.64 0)
+			(at 236.22 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28723,7 +28731,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 241.3 40.64 0)
+			(at 236.22 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30798,141 +30806,6 @@
 			(project "ESC_Device_Hub_v1"
 				(path "/a83e56d8-9142-4592-a705-3518707c865f"
 					(reference "#PWR34")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 236.22 41.91 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a31cfc33-c287-4238-a87b-c1bce7f33a0e")
-		(property "Reference" "R56"
-			(at 236.22 36.83 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Value" "1k"
-			(at 236.22 39.37 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" ""
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 236.22 41.91 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "9ff604fa-5a1c-438e-8d25-aa464104955e")
-		)
-		(pin "1"
-			(uuid "ab840515-c8a8-43d0-abe3-f8b75930ba4d")
-		)
-		(instances
-			(project "ESC_Device_Hub_v1"
-				(path "/a83e56d8-9142-4592-a705-3518707c865f"
-					(reference "R56")
 					(unit 1)
 				)
 			)
