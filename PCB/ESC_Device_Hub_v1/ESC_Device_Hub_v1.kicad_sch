@@ -8350,7 +8350,7 @@
 		(uuid "ea8e6b46-fef6-45f7-9d88-ae25be2d1f44")
 	)
 	(rectangle
-		(start 294.64 100.33)
+		(start 293.878 100.33)
 		(end 406.4 198.12)
 		(stroke
 			(width 0)
@@ -9164,6 +9164,10 @@
 	(no_connect
 		(at 320.04 74.93)
 		(uuid "80e79e6c-cc1f-4fd3-89b4-ed733f861f8d")
+	)
+	(no_connect
+		(at 88.9 71.12)
+		(uuid "c59ddedd-0fcf-4cd7-ab71-d005b2f3d7b6")
 	)
 	(no_connect
 		(at 88.9 96.52)
@@ -13766,7 +13770,7 @@
 	)
 	(global_label "Rol_SW1"
 		(shape input)
-		(at 41.91 168.91 0)
+		(at 40.64 175.26 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -13776,7 +13780,7 @@
 		)
 		(uuid "0c5f3c8e-5f9c-433d-b755-c2855123353a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.8174 168.91 0)
+			(at 51.5474 175.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14006,7 +14010,7 @@
 	)
 	(global_label "Rol_SW2"
 		(shape input)
-		(at 41.91 171.45 0)
+		(at 40.64 177.8 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14016,7 +14020,7 @@
 		)
 		(uuid "1c341036-0c7a-4ce4-b91b-f26ca41900ac")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.8174 171.45 0)
+			(at 51.5474 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14100,9 +14104,33 @@
 			)
 		)
 	)
+	(global_label "Rol_SW8"
+		(shape input)
+		(at 41.91 147.32 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a9b4d26-49ad-40c9-b069-8a215cb08357")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 41.91 136.4126 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "Rol_SW4"
 		(shape input)
-		(at 41.91 173.99 0)
+		(at 40.64 180.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14112,7 +14140,7 @@
 		)
 		(uuid "2b1bb84f-b551-4b99-ae8e-be4cdd95a1a9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.8174 173.99 0)
+			(at 51.5474 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14174,17 +14202,17 @@
 	)
 	(global_label "Synchronization_clock"
 		(shape input)
-		(at 82.55 86.36 180)
+		(at 139.7 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "3eb771f1-3787-4b8a-841a-58f6ebcedf67")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.841 86.36 0)
+			(at 158.409 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14192,7 +14220,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 	)
@@ -14294,7 +14322,7 @@
 	)
 	(global_label "LED_1"
 		(shape input)
-		(at 166.37 90.17 0)
+		(at 139.7 55.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14304,7 +14332,7 @@
 		)
 		(uuid "46bca323-4103-4d5b-89af-4ba881f20fa9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 174.9794 90.17 0)
+			(at 148.3094 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14990,17 +15018,17 @@
 	)
 	(global_label "Synchronization_flag"
 		(shape input)
-		(at 82.55 88.9 180)
+		(at 139.7 58.42 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "8eadb1a9-d8a3-4932-8a66-7f44607be65b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.85 88.9 0)
+			(at 162.4 58.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15008,7 +15036,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 	)
@@ -15049,6 +15077,30 @@
 		(uuid "960b4267-75b7-4429-9e8c-c9fc00863a36")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 238.7818 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Rol_SW2"
+		(shape input)
+		(at 29.21 147.32 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "96cd86e0-c421-460d-b838-9e3b12393f7c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 29.21 136.4126 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15372,6 +15424,30 @@
 			)
 		)
 	)
+	(global_label "Rol_SW4"
+		(shape input)
+		(at 35.56 147.32 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ac9f833f-b64b-46fb-843c-d657f6107b2e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 35.56 136.4126 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "LED_4"
 		(shape input)
 		(at 91.44 163.83 90)
@@ -15518,7 +15594,7 @@
 	)
 	(global_label "Rol_SW8"
 		(shape input)
-		(at 41.91 176.53 0)
+		(at 40.64 182.88 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15528,7 +15604,7 @@
 		)
 		(uuid "bbc90766-8ec1-47cb-be16-140ca6538462")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.8174 176.53 0)
+			(at 51.5474 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15697,6 +15773,30 @@
 		(uuid "c30d48fb-7bf2-44b9-a3d1-9828df1f9a6a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 395.1732 176.53 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Rol_SW1"
+		(shape input)
+		(at 22.86 147.32 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c39a3a80-754d-4b3e-b599-3890fac13345")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.86 136.4126 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15950,7 +16050,7 @@
 	)
 	(global_label "Rol_SW4"
 		(shape input)
-		(at 88.9 114.3 180)
+		(at 88.9 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -15960,7 +16060,7 @@
 		)
 		(uuid "d5365cbd-9308-4de1-822b-1a3eb66ddd4f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.9926 114.3 0)
+			(at 77.9926 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16046,17 +16146,17 @@
 	)
 	(global_label "LED_2"
 		(shape input)
-		(at 72.39 106.68 180)
+		(at 139.7 53.34 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "e2ab65a8-b927-461a-a120-75d48f37563e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.7806 106.68 0)
+			(at 148.3094 53.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16064,7 +16164,7 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 	)
@@ -16166,7 +16266,7 @@
 	)
 	(global_label "LED_3"
 		(shape input)
-		(at 72.39 104.14 180)
+		(at 88.9 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16176,7 +16276,7 @@
 		)
 		(uuid "e8eadbd0-da40-47c4-9087-7bf7e8551489")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.7806 104.14 0)
+			(at 80.2906 91.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16238,7 +16338,7 @@
 	)
 	(global_label "LED_4"
 		(shape input)
-		(at 72.39 101.6 180)
+		(at 88.9 88.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16248,7 +16348,7 @@
 		)
 		(uuid "f462f843-2b19-4fe5-b3ea-b985760034a4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 63.7806 101.6 0)
+			(at 80.2906 88.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16286,7 +16386,7 @@
 	)
 	(global_label "Rol_SW8"
 		(shape input)
-		(at 88.9 111.76 180)
+		(at 88.9 114.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -16296,7 +16396,7 @@
 		)
 		(uuid "f7a416ec-d12f-46e6-b7f6-7f55c84d8f69")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 77.9926 111.76 0)
+			(at 77.9926 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16657,6 +16757,84 @@
 			(project "ESC_Device_Hub_v1"
 				(path "/a83e56d8-9142-4592-a705-3518707c865f"
 					(reference "#PWR10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 41.91 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "03c14f04-e1c5-4e90-b23c-17e51b2227dc")
+		(property "Reference" "#PWR097"
+			(at 41.91 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 41.91 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 41.91 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f8795d4f-f678-4589-b838-c9593abb0048")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "#PWR097")
 					(unit 1)
 				)
 			)
@@ -17453,7 +17631,7 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
-		(at 49.53 166.37 270)
+		(at 40.64 172.72 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17464,7 +17642,7 @@
 		(fields_autoplaced yes)
 		(uuid "0d1f46e7-6791-4780-9726-74ffabcfcbe8")
 		(property "Reference" "#PWR043"
-			(at 45.72 166.37 0)
+			(at 36.83 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17475,7 +17653,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 53.34 166.3699 90)
+			(at 44.45 172.7199 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17486,7 +17664,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 49.53 166.37 0)
+			(at 40.64 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17497,7 +17675,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 49.53 166.37 0)
+			(at 40.64 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17508,7 +17686,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 49.53 166.37 0)
+			(at 40.64 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21580,6 +21758,143 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 22.86 151.13 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3838bfb5-272e-4bcf-be13-3307c3495c08")
+		(property "Reference" "R5"
+			(at 25.4 149.8599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1k"
+			(at 25.4 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 24.638 151.13 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" ""
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 22.86 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d357c3c7-fa19-4615-bd99-1e81471b50fc")
+		)
+		(pin "2"
+			(uuid "7077cf1c-d4de-4e25-94a9-73893b4f9a32")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
 		(at 149.86 236.22 180)
 		(unit 1)
@@ -22193,6 +22508,84 @@
 			(project "ESC_Device_Hub_v1"
 				(path "/a83e56d8-9142-4592-a705-3518707c865f"
 					(reference "R55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 22.86 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "40e8edfb-74d2-4149-9e87-dc14f8120638")
+		(property "Reference" "#PWR089"
+			(at 22.86 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 22.86 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 22.86 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 22.86 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 22.86 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4288a9e5-a89f-4710-bae9-faef94812234")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "#PWR089")
 					(unit 1)
 				)
 			)
@@ -26494,7 +26887,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Coded_SH-7050")
-		(at 31.75 171.45 0)
+		(at 30.48 177.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -26505,7 +26898,7 @@
 		(fields_autoplaced yes)
 		(uuid "746e0c7c-3cf9-4b38-8b7e-dc4d73492bd6")
 		(property "Reference" "SW3"
-			(at 31.75 158.75 0)
+			(at 30.48 165.1 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -26515,7 +26908,7 @@
 			)
 		)
 		(property "Value" "SW_Coded_SH-7050"
-			(at 31.75 161.29 0)
+			(at 30.48 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -26525,7 +26918,7 @@
 			)
 		)
 		(property "Footprint" "My_Library:ERD116RFZ"
-			(at 24.13 182.88 0)
+			(at 22.86 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26537,7 +26930,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.nidec-copal-electronics.com/e/catalog/switch/sh-7000.pdf"
-			(at 31.75 171.45 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26548,7 +26941,7 @@
 			)
 		)
 		(property "Description" "Rotary switch, 4-bit encoding, 16 positions, Real code"
-			(at 31.75 171.45 0)
+			(at 30.48 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29800,6 +30193,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 35.56 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9cfe6848-aa3f-450b-a00c-93d073edc512")
+		(property "Reference" "#PWR096"
+			(at 35.56 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 35.56 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 35.56 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3a3040a0-ffb0-41dd-a8b5-673d6017385d")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "#PWR096")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 180.34 113.03 0)
 		(unit 1)
@@ -30009,6 +30480,143 @@
 			(project "ESC_Device_Hub_v1"
 				(path "/a83e56d8-9142-4592-a705-3518707c865f"
 					(reference "#PWR093")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 29.21 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9ef9636e-d55a-49b9-a38a-e09b4fa82869")
+		(property "Reference" "R6"
+			(at 31.75 149.8599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 31.75 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 27.432 151.13 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" ""
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 29.21 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ac7c2fca-e006-4297-8407-07f68c6d7687")
+		)
+		(pin "2"
+			(uuid "fe5fbcfd-883c-4429-a664-f9f94b0673c1")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -33695,6 +34303,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 29.21 154.94 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c60c3efc-3407-4f07-ae6f-e3f7b8ef6c4a")
+		(property "Reference" "#PWR095"
+			(at 29.21 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 29.21 160.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 29.21 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 29.21 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 29.21 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e6852f15-d6a0-42e8-8b84-c2bbc91cb98b")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "#PWR095")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VBUS")
 		(at 321.31 43.18 0)
 		(unit 1)
@@ -35554,141 +36240,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 45.72 166.37 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dcf5e0ce-d22e-40f0-81f2-6543c3342468")
-		(property "Reference" "R5"
-			(at 45.72 160.02 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1k"
-			(at 45.72 162.56 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 45.72 168.148 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" ""
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Name" ""
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Manufacturer_Part_Number" ""
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 45.72 166.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2653850d-1497-4383-b7b1-8120ca66194e")
-		)
-		(pin "2"
-			(uuid "737bcbe5-9f16-4734-911d-99f0bc36c8ff")
-		)
-		(instances
-			(project "ESC_Device_Hub_v1"
-				(path "/a83e56d8-9142-4592-a705-3518707c865f"
-					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Power_Management:LM66100DCK")
 		(at 388.62 46.99 0)
 		(unit 1)
@@ -36705,6 +37256,280 @@
 			(project "ESC_Device_Hub_v1"
 				(path "/a83e56d8-9142-4592-a705-3518707c865f"
 					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 41.91 151.13 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e9c27cf2-36b7-4fd9-84e6-92da57e5ad6b")
+		(property "Reference" "R20"
+			(at 44.45 149.8599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "1k"
+			(at 44.45 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 43.688 151.13 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" ""
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 41.91 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d9e2742a-4979-4f01-a0f8-4995d48e2c50")
+		)
+		(pin "2"
+			(uuid "5cb2a3b6-3e95-41e5-9aef-903ca0ce1766")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 35.56 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea357727-3a34-4c17-9c75-270fe18f9bf7")
+		(property "Reference" "R7"
+			(at 38.1 149.8599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 38.1 152.3999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 33.782 151.13 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" ""
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Name" ""
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer_Part_Number" ""
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 35.56 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "15233d56-5fa5-4e32-96d7-c3f864c4994f")
+		)
+		(pin "2"
+			(uuid "b31c2b79-088e-487c-be6b-693e120aadd8")
+		)
+		(instances
+			(project "ESC_Device_Hub_v1"
+				(path "/a83e56d8-9142-4592-a705-3518707c865f"
+					(reference "R7")
 					(unit 1)
 				)
 			)
