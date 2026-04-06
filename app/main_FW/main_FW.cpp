@@ -1,7 +1,7 @@
 
 #include "main_FW.hpp"
 
-void mmain_FW_Class::setup()
+void mmain_FW::setup()
 {
 
     //gn10_can::drivers::DriverSTM32CAN fdcan_main;
@@ -9,11 +9,11 @@ void mmain_FW_Class::setup()
     //gn10_can::devices::
 
     fdcan_esc_setting.hfdcanx = &hfdcan2;
-    fdcan_esc_setting.hfdcan_port = mFDCAN_template_Class::fdcan_ports::FDCAN2_Port;
-    fdcan_esc_setting.fifo_num = mFDCAN_template_Class::Fifo_num_type::FIFO1;
-    fdcan_esc_setting.hfdcan_frame = mFDCAN_template_Class::can_frame_type::classic_can;
+    fdcan_esc_setting.hfdcan_port = mFDCAN_template::fdcan_ports::FDCAN2_Port;
+    fdcan_esc_setting.fifo_num = mFDCAN_template::Fifo_num_type::FIFO1;
+    fdcan_esc_setting.hfdcan_frame = mFDCAN_template::can_frame_type::classic_can;
     fdcan_esc_setting.RxTimeOutCycle_ms = 5;
-    fdcan_esc_setting.bit_rate = mFDCAN_template_Class::bit_rate_type::_1Mbps_;
+    fdcan_esc_setting.bit_rate = mFDCAN_template::bit_rate_type::_1Mbps_;
     if(mFDCAN.Init(&fdcan_esc_setting))
     {
         /*エラー処理を書く*/
@@ -42,12 +42,12 @@ void mmain_FW_Class::setup()
 
     CAN_Data.Data_p = CAN_Data.Data;
 
-    if(mFDCAN.Enable_timeout(mFDCAN_template_Class::fdcan_ports::FDCAN2_Port))
+    if(mFDCAN.Enable_timeout(mFDCAN_template::fdcan_ports::FDCAN2_Port))
     {
         /*エラー*/
     }
 
-    fdcan_txdata.FDCAN_Port = mFDCAN_template_Class::fdcan_ports::FDCAN1_Port;
+    fdcan_txdata.FDCAN_Port = mFDCAN_template::fdcan_ports::FDCAN1_Port;
     fdcan_txdata.Id = 0x00;
     fdcan_txdata.Len = 0x01;
     fdcan_txdata.data_p = NULL;
@@ -57,7 +57,7 @@ void mmain_FW_Class::setup()
     }
 }
 
-void mmain_FW_Class::loop()
+void mmain_FW::loop()
 {
     if(NVIC_1Hz)
     {
@@ -89,7 +89,7 @@ void mmain_FW_Class::loop()
     }
 }
 
-inline void mmain_FW_Class::Get_Encoder()
+inline void mmain_FW::Get_Encoder()
 {
 
     Encoder_Count_Port1 = __HAL_TIM_GET_COUNTER(&htim8);
@@ -102,15 +102,15 @@ inline void mmain_FW_Class::Get_Encoder()
 
 }
 
-mmain_FW_Class mmain_FW;
+mmain_FW main_FW;
 
-void mFDCAN_Class::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len)
+void mFDCAN_function::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len)
 {
 
-    mmain_FW.CAN_Data.Id = Id;
-    mmain_FW.CAN_Data.Data_p = data_p;
-    mmain_FW.CAN_Data.Len = Len;
-    mmain_FW.NVIC_esc_CAN = 1;
+    main_FW.CAN_Data.Id = Id;
+    main_FW.CAN_Data.Data_p = data_p;
+    main_FW.CAN_Data.Len = Len;
+    main_FW.NVIC_esc_CAN = 1;
     
 }
 
@@ -123,8 +123,8 @@ extern "C"
          * 1 Hzの割り込み 
          */
 
-        mmain_FW.Get_Encoder();
-        mmain_FW.NVIC_1Hz = 1;
+        main_FW.Get_Encoder();
+        main_FW.NVIC_1Hz = 1;
     }
 
     void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -135,8 +135,8 @@ extern "C"
              * 10 kHzの割り込み 
              */
 
-            mmain_FW.Get_Encoder();
-            mmain_FW.NVIC_1kHz = 1;
+            main_FW.Get_Encoder();
+            main_FW.NVIC_1kHz = 1;
         }
         
         if(htim == &htim6)
@@ -145,8 +145,8 @@ extern "C"
              * 1 kHzの割り込み 
              */
 
-            mmain_FW.Get_Encoder();
-            mmain_FW.NVIC_10kHz = 1;
+            main_FW.Get_Encoder();
+            main_FW.NVIC_10kHz = 1;
         }
     }
 

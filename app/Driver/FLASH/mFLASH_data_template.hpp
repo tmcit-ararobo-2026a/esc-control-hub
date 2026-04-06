@@ -2,7 +2,7 @@
 #pragma once
 #include <cstdint>
 
-class mFLASH_data_template_Class{
+class mFLASH_data_template{
     public:
         enum class State : uint8_t{
             Standby,

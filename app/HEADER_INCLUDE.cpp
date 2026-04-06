@@ -3,9 +3,9 @@
 #include "main_FW.hpp"
 
 void Maidui3_Setup(){
-    mmain_FW.setup();
+    main_FW.setup();
 }
 
 void Maidui3_loop(){
-    mmain_FW.loop();
+    main_FW.loop();
 }

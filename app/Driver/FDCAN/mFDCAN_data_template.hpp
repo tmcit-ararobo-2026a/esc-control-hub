@@ -2,7 +2,7 @@
 #pragma once
 #include <cstdint>
 
-class mFDCAN_template_Class
+class mFDCAN_template
 {
 public:
     enum class fdcan_ports : uint8_t {

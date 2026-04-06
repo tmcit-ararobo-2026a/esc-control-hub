@@ -2,4 +2,4 @@
 #include "mFLASH.hpp"
 
 
-mFLASH_Class mFLASH;
+mFLASH_function mFLASH;

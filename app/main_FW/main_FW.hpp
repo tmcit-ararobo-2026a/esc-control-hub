@@ -5,7 +5,7 @@
 #include "main.h"
 #include "mFDCAN.hpp"
 
-class mmain_FW_Class{
+class mmain_FW{
     public:
         void setup();
         void loop();
@@ -30,12 +30,12 @@ class mmain_FW_Class{
         }CAN_Data;
 
         /*TypeDef_Start*/
-        mFDCAN_template_Class::fdcan_setting_HandleTypeDef fdcan_esc_setting;
-        mFDCAN_template_Class::fdcan_TxData_HandleTypeDef fdcan_txdata;
+        mFDCAN_template::fdcan_setting_HandleTypeDef fdcan_esc_setting;
+        mFDCAN_template::fdcan_TxData_HandleTypeDef fdcan_txdata;
         /*TypeDef_End*/
 };
 
-extern mmain_FW_Class mmain_FW;
+extern mmain_FW main_FW;
 
 
 extern FDCAN_HandleTypeDef hfdcan1;

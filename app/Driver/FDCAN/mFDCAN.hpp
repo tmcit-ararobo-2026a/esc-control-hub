@@ -17,7 +17,7 @@
 
 #include "mFDCAN_data_template.hpp"
 
-class mFDCAN_Class : mFDCAN_template_Class{
+class mFDCAN_function : mFDCAN_template{
     public:
         bool Init(fdcan_setting_HandleTypeDef *set);
         bool Send(fdcan_TxData_HandleTypeDef *data);
@@ -45,4 +45,4 @@ class mFDCAN_Class : mFDCAN_template_Class{
     
 };
 
-extern mFDCAN_Class mFDCAN;
+extern mFDCAN_function mFDCAN;
