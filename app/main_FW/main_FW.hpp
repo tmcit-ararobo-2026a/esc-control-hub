@@ -22,16 +22,20 @@ class mmainFW{
         volatile bool NVIC_main_FDCAN;
         volatile bool NVIC_esc_CAN;
 
-        struct CAN_Callback{
+        typedef struct{
             uint32_t Id;
             uint8_t Len;
             uint8_t Data[64];
             uint8_t *Data_p;
-        }CAN_Data;
+        }fdcan_frame_callback;
+
+        fdcan_frame_callback main_fdcan_callback;
+        fdcan_frame_callback esc_fdcan_callback;
 
         /*TypeDef_Start*/
         mFDCANtemplate::fdcan_setting_HandleTypeDef fdcan_esc_setting;
-        mFDCANtemplate::fdcan_TxData_HandleTypeDef fdcan_txdata;
+        mFDCANtemplate::fdcan_TxData_HandleTypeDef esc_txdata;
+        //mFDCANtemplate::fdcan_RxData_HandleTypeDef esc_rxdata;
         /*TypeDef_End*/
 };
 

@@ -176,7 +176,6 @@ bool maidui3_hal_FDCAN::mFDCANfunction::Init(fdcan_setting_HandleTypeDef *set)
 
 bool maidui3_hal_FDCAN::mFDCANfunction::Send(fdcan_TxData_HandleTypeDef *data)
 {
-    FDCAN_TxHeaderTypeDef FDCAN_TxHeader;
     FDCAN_HandleTypeDef *hfdcanx;
     can_frame_type hfdcan_frame;
 
@@ -219,6 +218,8 @@ bool maidui3_hal_FDCAN::mFDCANfunction::Send(fdcan_TxData_HandleTypeDef *data)
         return 1;
     }
 
+    FDCAN_TxHeaderTypeDef FDCAN_TxHeader;
+
     if(hfdcan_frame == can_frame_type::classic_can)
     {
         if(data->Len > 8)
@@ -248,6 +249,8 @@ bool maidui3_hal_FDCAN::mFDCANfunction::Send(fdcan_TxData_HandleTypeDef *data)
         FDCAN_TxHeader.FDFormat = FDCAN_FD_CAN;
     }
 
+    uint8_t *data_p = data->data;
+
     FDCAN_TxHeader.Identifier = data->Id;
     FDCAN_TxHeader.IdType = FDCAN_STANDARD_ID;
     FDCAN_TxHeader.TxFrameType = FDCAN_DATA_FRAME;
@@ -258,7 +261,7 @@ bool maidui3_hal_FDCAN::mFDCANfunction::Send(fdcan_TxData_HandleTypeDef *data)
     FDCAN_TxHeader.TxEventFifoControl = FDCAN_STORE_TX_EVENTS;
     FDCAN_TxHeader.MessageMarker = 0;
 
-    if(HAL_FDCAN_AddMessageToTxFifoQ(hfdcanx, &FDCAN_TxHeader, data->data_p) != HAL_OK)
+    if(HAL_FDCAN_AddMessageToTxFifoQ(hfdcanx, &FDCAN_TxHeader, data_p) != HAL_OK)
     {
         State.Send.Add_New_TxMessage = 1;
         return 1;
@@ -309,6 +312,41 @@ bool maidui3_hal_FDCAN::mFDCANfunction::Enable_timeout(fdcan_ports port)
     else if(port == fdcan_ports::FDCAN3_Port)
     {
         if(HAL_FDCAN_EnableTimeoutCounter(FDCAN_Port3_set.hfdcanx) != HAL_OK)
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
+
+/*----------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------------------*/
+
+
+bool maidui3_hal_FDCAN::mFDCANfunction::Disable_timeout(fdcan_ports port)
+{
+    if(port == fdcan_ports::FDCAN1_Port)
+    {
+        if(HAL_FDCAN_DisableTimeoutCounter(FDCAN_Port1_set.hfdcanx) != HAL_OK)
+        {
+            return 1;
+        }
+    }
+    else if(port == fdcan_ports::FDCAN2_Port)
+    {
+        if(HAL_FDCAN_DisableTimeoutCounter(FDCAN_Port2_set.hfdcanx) != HAL_OK)
+        {
+            return 1;
+        }
+    }
+    else if(port == fdcan_ports::FDCAN3_Port)
+    {
+        if(HAL_FDCAN_DisableTimeoutCounter(FDCAN_Port3_set.hfdcanx) != HAL_OK)
         {
             return 1;
         }

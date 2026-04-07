@@ -58,8 +58,18 @@ public:
         fdcan_ports FDCAN_Port;
         uint32_t Id;
         uint8_t Len;
-        uint8_t* data_p;/*64Byteで作れ*/
+        union {
+
+        };
+        
     } fdcan_TxData_HandleTypeDef;
+
+    //typedef struct {
+    //    uint32_t Id;
+    //    uint8_t Len;
+    //    uint8_t Data[64];
+    //    uint8_t *Data_p;
+    //} fdcan_RxData_HandleTypeDef;
 
     typedef struct {
         struct {

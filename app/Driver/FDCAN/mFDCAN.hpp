@@ -24,6 +24,7 @@ class mFDCANfunction : mFDCANtemplate{
         bool Init(fdcan_setting_HandleTypeDef *set);
         bool Send(fdcan_TxData_HandleTypeDef *data);
         bool Enable_timeout(fdcan_ports port);
+        bool Disable_timeout(fdcan_ports port);
         /**
          * return value mean
          * 0 = COMPLETE

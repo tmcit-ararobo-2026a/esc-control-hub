@@ -40,21 +40,13 @@ void mmainFW::setup()
         /*エラーだよ ENC4*/
     }
 
-    CAN_Data.Data_p = CAN_Data.Data;
+    esc_fdcan_callback.Data_p = esc_fdcan_callback.Data;
 
     if(mFDCAN.Enable_timeout(mFDCANtemplate::fdcan_ports::FDCAN2_Port))
     {
         /*エラー*/
     }
 
-    fdcan_txdata.FDCAN_Port = mFDCANtemplate::fdcan_ports::FDCAN1_Port;
-    fdcan_txdata.Id = 0x00;
-    fdcan_txdata.Len = 0x01;
-    fdcan_txdata.data_p = NULL;
-    if(mFDCAN.Send(&fdcan_txdata))
-    {
-        /*エラー処理を書く*/
-    }
 }
 
 void mmainFW::loop()
@@ -79,7 +71,6 @@ void mmainFW::loop()
     if(NVIC_main_FDCAN)
     {
 
-        NVIC_main_FDCAN = 0;
     }
 
     if(NVIC_esc_CAN)
@@ -107,9 +98,9 @@ mmainFW main_FW;
 void maidui3_hal_FDCAN::mFDCANfunction::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len)
 {
 
-    main_FW.CAN_Data.Id = Id;
-    main_FW.CAN_Data.Data_p = data_p;
-    main_FW.CAN_Data.Len = Len;
+    main_FW.esc_fdcan_callback.Id = Id;
+    main_FW.esc_fdcan_callback.Data_p = data_p;
+    main_FW.esc_fdcan_callback.Len = Len;
     main_FW.NVIC_esc_CAN = 1;
     
 }
