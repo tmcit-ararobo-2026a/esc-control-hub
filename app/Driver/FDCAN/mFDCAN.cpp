@@ -2,7 +2,7 @@
 #include "mFDCAN.hpp"
 #include "mFDCAN_data_template.hpp"
 
-bool mFDCAN_function::Init(fdcan_setting_HandleTypeDef *set)
+bool maidui3_hal_FDCAN::mFDCANfunction::Init(fdcan_setting_HandleTypeDef *set)
 {
     FDCAN_FilterTypeDef FDCAN_filter;
     bool using_error;
@@ -174,7 +174,7 @@ bool mFDCAN_function::Init(fdcan_setting_HandleTypeDef *set)
 /*----------------------------------------------------------------------------------------------------*/
 
 
-bool mFDCAN_function::Send(fdcan_TxData_HandleTypeDef *data)
+bool maidui3_hal_FDCAN::mFDCANfunction::Send(fdcan_TxData_HandleTypeDef *data)
 {
     FDCAN_TxHeaderTypeDef FDCAN_TxHeader;
     FDCAN_HandleTypeDef *hfdcanx;
@@ -290,7 +290,7 @@ bool mFDCAN_function::Send(fdcan_TxData_HandleTypeDef *data)
 /*----------------------------------------------------------------------------------------------------*/
 
 
-bool mFDCAN_function::Enable_timeout(fdcan_ports port)
+bool maidui3_hal_FDCAN::mFDCANfunction::Enable_timeout(fdcan_ports port)
 {
     if(port == fdcan_ports::FDCAN1_Port)
     {
@@ -325,7 +325,7 @@ bool mFDCAN_function::Enable_timeout(fdcan_ports port)
 /*----------------------------------------------------------------------------------------------------*/
 
 
-void mFDCAN_function::TxCallback(fdcan_CallBack_HandleTypeDef *data)
+void maidui3_hal_FDCAN::mFDCANfunction::TxCallback(fdcan_CallBack_HandleTypeDef *data)
 {
     if(data->State == FDCAN_IT_TX_COMPLETE)
     {
@@ -352,7 +352,7 @@ void mFDCAN_function::TxCallback(fdcan_CallBack_HandleTypeDef *data)
 /*----------------------------------------------------------------------------------------------------*/
 
 
-void mFDCAN_function::RxCallback_Fifo0(fdcan_CallBack_HandleTypeDef *data)
+void maidui3_hal_FDCAN::mFDCANfunction::RxCallback_Fifo0(fdcan_CallBack_HandleTypeDef *data)
 {
 
     FDCAN_RxHeaderTypeDef FDCAN_RxHeader;
@@ -425,7 +425,7 @@ void mFDCAN_function::RxCallback_Fifo0(fdcan_CallBack_HandleTypeDef *data)
 /*----------------------------------------------------------------------------------------------------*/
 
 
-void mFDCAN_function::RxCallback_Fifo1(fdcan_CallBack_HandleTypeDef *data)
+void maidui3_hal_FDCAN::mFDCANfunction::RxCallback_Fifo1(fdcan_CallBack_HandleTypeDef *data)
 {
 
     FDCAN_RxHeaderTypeDef FDCAN_RxHeader;
@@ -498,11 +498,11 @@ void mFDCAN_function::RxCallback_Fifo1(fdcan_CallBack_HandleTypeDef *data)
 /*----------------------------------------------------------------------------------------------------*/
 
 
-__weak void mFDCAN_function::Callback_Port1(uint32_t Id, uint8_t *data_p, uint8_t Len){/**/}
-__weak void mFDCAN_function::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len){/**/}
-__weak void mFDCAN_function::Callback_Port3(uint32_t Id, uint8_t *data_p, uint8_t Len){/**/}
+__weak void maidui3_hal_FDCAN::mFDCANfunction::Callback_Port1(uint32_t Id, uint8_t *data_p, uint8_t Len){/**/}
+__weak void maidui3_hal_FDCAN::mFDCANfunction::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len){/**/}
+__weak void maidui3_hal_FDCAN::mFDCANfunction::Callback_Port3(uint32_t Id, uint8_t *data_p, uint8_t Len){/**/}
 
-mFDCAN_function mFDCAN;
+maidui3_hal_FDCAN::mFDCANfunction mFDCAN;
 
 extern "C"
 {

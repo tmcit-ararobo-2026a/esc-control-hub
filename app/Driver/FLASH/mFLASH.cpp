@@ -2,4 +2,4 @@
 #include "mFLASH.hpp"
 
 
-mFLASH_function mFLASH;
+maidui3_hal_FLASH::mFLASHfunction mFLASH;

@@ -2,4 +2,4 @@
 #include "mUSB_FS.hpp"
 
 
-mUSB_FS_function mUSB_FS;
+maidui3_hal_usbfs::mUSBFSfunction mUSB_FS;

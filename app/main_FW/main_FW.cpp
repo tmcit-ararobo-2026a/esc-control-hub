@@ -1,7 +1,7 @@
 
 #include "main_FW.hpp"
 
-void mmain_FW::setup()
+void mmainFW::setup()
 {
 
     //gn10_can::drivers::DriverSTM32CAN fdcan_main;
@@ -9,11 +9,11 @@ void mmain_FW::setup()
     //gn10_can::devices::
 
     fdcan_esc_setting.hfdcanx = &hfdcan2;
-    fdcan_esc_setting.hfdcan_port = mFDCAN_template::fdcan_ports::FDCAN2_Port;
-    fdcan_esc_setting.fifo_num = mFDCAN_template::Fifo_num_type::FIFO1;
-    fdcan_esc_setting.hfdcan_frame = mFDCAN_template::can_frame_type::classic_can;
+    fdcan_esc_setting.hfdcan_port = mFDCANtemplate::fdcan_ports::FDCAN2_Port;
+    fdcan_esc_setting.fifo_num = mFDCANtemplate::Fifo_num_type::FIFO1;
+    fdcan_esc_setting.hfdcan_frame = mFDCANtemplate::can_frame_type::classic_can;
     fdcan_esc_setting.RxTimeOutCycle_ms = 5;
-    fdcan_esc_setting.bit_rate = mFDCAN_template::bit_rate_type::_1Mbps_;
+    fdcan_esc_setting.bit_rate = mFDCANtemplate::bit_rate_type::_1Mbps_;
     if(mFDCAN.Init(&fdcan_esc_setting))
     {
         /*エラー処理を書く*/
@@ -42,12 +42,12 @@ void mmain_FW::setup()
 
     CAN_Data.Data_p = CAN_Data.Data;
 
-    if(mFDCAN.Enable_timeout(mFDCAN_template::fdcan_ports::FDCAN2_Port))
+    if(mFDCAN.Enable_timeout(mFDCANtemplate::fdcan_ports::FDCAN2_Port))
     {
         /*エラー*/
     }
 
-    fdcan_txdata.FDCAN_Port = mFDCAN_template::fdcan_ports::FDCAN1_Port;
+    fdcan_txdata.FDCAN_Port = mFDCANtemplate::fdcan_ports::FDCAN1_Port;
     fdcan_txdata.Id = 0x00;
     fdcan_txdata.Len = 0x01;
     fdcan_txdata.data_p = NULL;
@@ -57,7 +57,7 @@ void mmain_FW::setup()
     }
 }
 
-void mmain_FW::loop()
+void mmainFW::loop()
 {
     if(NVIC_1Hz)
     {
@@ -89,7 +89,7 @@ void mmain_FW::loop()
     }
 }
 
-inline void mmain_FW::Get_Encoder()
+inline void mmainFW::Get_Encoder()
 {
 
     Encoder_Count_Port1 = __HAL_TIM_GET_COUNTER(&htim8);
@@ -102,9 +102,9 @@ inline void mmain_FW::Get_Encoder()
 
 }
 
-mmain_FW main_FW;
+mmainFW main_FW;
 
-void mFDCAN_function::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len)
+void maidui3_hal_FDCAN::mFDCANfunction::Callback_Port2(uint32_t Id, uint8_t *data_p, uint8_t Len)
 {
 
     main_FW.CAN_Data.Id = Id;

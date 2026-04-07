@@ -17,7 +17,9 @@
 
 #include "mFDCAN_data_template.hpp"
 
-class mFDCAN_function : mFDCAN_template{
+namespace maidui3_hal_FDCAN{
+
+class mFDCANfunction : mFDCANtemplate{
     public:
         bool Init(fdcan_setting_HandleTypeDef *set);
         bool Send(fdcan_TxData_HandleTypeDef *data);
@@ -45,4 +47,6 @@ class mFDCAN_function : mFDCAN_template{
     
 };
 
-extern mFDCAN_function mFDCAN;
+};
+
+extern maidui3_hal_FDCAN::mFDCANfunction mFDCAN;

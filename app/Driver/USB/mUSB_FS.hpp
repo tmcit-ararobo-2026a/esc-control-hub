@@ -1,8 +1,12 @@
 
 #pragma once
 
-class mUSB_FS_function {
+namespace maidui3_hal_usbfs{
+
+class mUSBFSfunction {
 
 };
 
-extern mUSB_FS_function mUSB_FS;
+};
+
+extern maidui3_hal_usbfs::mUSBFSfunction mUSB_FS;
