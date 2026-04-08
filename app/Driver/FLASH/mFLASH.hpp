@@ -2,7 +2,7 @@
 #pragma once
 #include "mFLASH_data_template.hpp"
 
-namespace maidui3_hal_FLASH{
+namespace maidui3_hal{
 
 class mFLASHfunction : mFLASHtemplate{
     public:
@@ -13,4 +13,4 @@ class mFLASHfunction : mFLASHtemplate{
 
 };
 
-extern maidui3_hal_FLASH::mFLASHfunction mFLASH;
+extern maidui3_hal::mFLASHfunction mFLASH;
