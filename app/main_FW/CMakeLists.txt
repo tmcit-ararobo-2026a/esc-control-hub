@@ -7,7 +7,7 @@ set(main_FW_Include_Dirs
 )
 
 set(main_FW_App_Dirs
-    ${CMAKE_CURRENT_SOURCE_DIR}/main_FW.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/App.cpp
 )
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${main_FW_App_Dirs})

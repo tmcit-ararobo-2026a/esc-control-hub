@@ -7,7 +7,7 @@ set(mFLASH_Include_Dirs
 )
 
 set(mFLASH_App_Dirs
-    ${CMAKE_CURRENT_SOURCE_DIR}/mFLASH.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/Flash.cpp
 )
 
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${mFLASH_App_Dirs})

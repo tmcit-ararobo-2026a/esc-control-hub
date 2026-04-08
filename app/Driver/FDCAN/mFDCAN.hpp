@@ -19,6 +19,12 @@ class mFDCANfunction : mFDCANtemplate{
         void Enable_FDCAN();
         void Disable_FDCAN();
 
+        void Enable_RxCallback();
+        void Disable_RxCallback();
+
+        void Enable_TxCallback();
+        void Disable_TxCallback();
+
 };
 
 };
