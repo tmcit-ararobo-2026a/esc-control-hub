@@ -3,24 +3,50 @@
 
 namespace gn10_can {
 namespace drivers {
-bool DriverHALFDCAN::init(maidui3_hal::fdcan::Fifo_Type fifo_)
+
+bool DriverHALFDCAN::init(bool fifo_)
 {
-    FDCAN_FilterTypeDef filter;
+    if (fifo_)
+        stock_fifo = FDCAN_RX_FIFO1;
+    else
+        stock_fifo = FDCAN_RX_FIFO0;
+    fdcan_.Init(hfdcanx_, fifo_);
+}
 
-    filter.IdType       = FDCAN_STANDARD_ID;
-    filter.FilterIndex  = 0;
-    filter.FilterType   = FDCAN_FILTER_MASK;
-    filter.FilterConfig = FDCAN_FILTER_TO_RXFIFO0;
-    filter.FilterID1    = 0x000;
-    filter.FilterID2    = 0x000;
-
-    if (HAL_FDCAN_ConfigFilter(hfdcanx_, &filter) != HAL_OK) {
+bool DriverHALFDCAN::send(const FDCANFrame& frame)
+{
+    if (frame.is_extended) {
+        fdcan_.FDCAN_TxHeader.IdType = FDCAN_EXTENDED_ID;
+    } else {
+        fdcan_.FDCAN_TxHeader.IdType = FDCAN_STANDARD_ID;
     }
 
-    ll_fdcan.Timeout(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
-    ll_fdcan.Tx_Callback(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
-    ll_fdcan.Rx_Callback(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
-    ll_fdcan.beginning(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
+    if (frame.MAX_DLC == 64) {
+        fdcan_.FDCAN_TxHeader.FDFormat = FDCAN_FD_CAN;
+    } else if (frame.MAX_DLC == 8) {
+        fdcan_.FDCAN_TxHeader.FDFormat = FDCAN_CLASSIC_CAN;
+    }
+
+    fdcan_.FDCAN_TxHeader.Identifier = frame.id;
+    fdcan_.FDCAN_TxHeader.DataLength = frame.dlc;
+
+    if (HAL_FDCAN_AddMessageToTxFifoQ(hfdcanx_, &fdcan_.FDCAN_TxHeader, const_cast<uint8_t*>(frame.data.data())) != HAL_OK) {
+    }
 }
+
+bool DriverHALFDCAN::receive(FDCANFrame& out_frame)
+{
+    if (HAL_FDCAN_GetRxMessage(hfdcanx_, stock_fifo, &fdcan_.FDCAN_RxHeader, rx_data) != HAL_OK) {
+    }
+
+    out_frame.id          = fdcan_.FDCAN_RxHeader.Identifier;
+    out_frame.dlc         = fdcan_.FDCAN_RxHeader.DataLength;
+    out_frame.is_extended = (fdcan_.FDCAN_RxHeader.IdType == FDCAN_EXTENDED_ID);
+
+    for (uint8_t i = 0; i < out_frame.dlc; i++) {
+        out_frame.data[i] = rx_data[i];
+    }
+}
+
 }  // namespace drivers
 }  // namespace gn10_can

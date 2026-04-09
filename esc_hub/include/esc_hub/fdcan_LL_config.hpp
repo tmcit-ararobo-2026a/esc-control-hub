@@ -22,6 +22,7 @@ enum class Fifo_Type : bool {
 
 typedef struct {
     struct {
+        bool Param;
         bool TimeoutNVIC;
         bool TimeoutCounter;
         bool beginning;

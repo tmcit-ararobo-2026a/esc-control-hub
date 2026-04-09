@@ -6,16 +6,34 @@
 
 namespace maidui3_hal {
 namespace fdcan {
-class FDCANfunction
+class FDCAN
 {
 public:
-    fdcan_state_TypeDef Timeout(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
-    fdcan_state_TypeDef beginning(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
-    fdcan_state_TypeDef Tx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
-    fdcan_state_TypeDef Rx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+    fdcan_state_TypeDef Init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_);
+
+    fdcan_state_TypeDef timeout_enable(FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+
+    fdcan_state_TypeDef timeout_disable(FDCAN_HandleTypeDef* hfdcanx_);
+
+    fdcan_state_TypeDef beginning_enable(FDCAN_HandleTypeDef* hfdcanx_);
+
+    fdcan_state_TypeDef beginning_disable(FDCAN_HandleTypeDef* hfdcanx_);
+
+    fdcan_state_TypeDef tx_Callback_enable(FDCAN_HandleTypeDef* hfdcanx_);
+
+    fdcan_state_TypeDef tx_Callback_disable(FDCAN_HandleTypeDef* hfdcanx_);
+
+    fdcan_state_TypeDef rx_Callback_enable(FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+
+    fdcan_state_TypeDef rx_Callback_disable(FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+
+    FDCAN_TxHeaderTypeDef FDCAN_TxHeader;
+    FDCAN_RxHeaderTypeDef FDCAN_RxHeader;
 
 private:
     State_HandleTypeDef State;
+
+    FDCAN_FilterTypeDef FDCAN_filter;
 };
 }  // namespace fdcan
 }  // namespace maidui3_hal
