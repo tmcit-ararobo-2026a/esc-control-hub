@@ -13,7 +13,7 @@
     "plantuml.exportSubFolder": false,
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "C_Cpp.default.cppStandard": "c++17",
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
@@ -21,5 +21,5 @@
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "C_Cpp.clang_format_style": "file"
+    "C_Cpp.clang_format_style": "file",
 }
