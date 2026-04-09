@@ -1,10 +1,10 @@
 
-#include "fdcan_LL_driver.hpp"
+#include "fdcan_ll_driver.hpp"
 
 namespace maidui3_hal {
 namespace fdcan {
 
-fdcan_state_TypeDef FDCAN::Init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_)
+fdcan_state_TypeDef FDCAN::init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_)
 {
     Fifo_Type _fifo_;
     if (fifo_) {

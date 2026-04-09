@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "esc_hub/fdcan_LL_config.hpp"
+#include "esc_hub/fdcan_ll_config.hpp"
 #include "fdcan.h"
 
 namespace maidui3_hal {
@@ -9,7 +9,7 @@ namespace fdcan {
 class FDCAN
 {
 public:
-    fdcan_state_TypeDef Init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_);
+    fdcan_state_TypeDef init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_);
 
     fdcan_state_TypeDef timeout_enable(FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
 
