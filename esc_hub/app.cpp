@@ -1,6 +1,9 @@
 
 #include "esc_hub/app.hpp"
 
+#include "gn10_can/include/gn10_can/devices/esc_hub_client.hpp"
+
+
 void mmainFW::setup()
 {
     HAL_TIM_Base_Start(&htim2);                // 10kHz
