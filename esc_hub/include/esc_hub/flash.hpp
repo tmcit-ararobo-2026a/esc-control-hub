@@ -1,6 +1,6 @@
 
 #pragma once
-#include "Flash_data_template.hpp"
+#include "esc_hub/flash_data_config.hpp"
 
 namespace maidui3_hal{
 

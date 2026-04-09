@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "L_FDCAN_template.hpp"
+#include "esc_hub/fdcan_driver.hpp"
 #include "gn10_can/drivers/driver_interface.hpp"
 #include "stm32h5xx_hal_fdcan.h"
 
