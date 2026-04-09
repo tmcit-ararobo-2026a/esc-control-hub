@@ -17,10 +17,10 @@ namespace gn10_can{
                 
             }
 
-            W2_.Timeout(maidui3_hal::fdcan::Enable_and_Disable::Enable);
-            W2_.Tx_Callback(maidui3_hal::fdcan::Enable_and_Disable::Enable);
-            W2_.Rx_Callback(maidui3_hal::fdcan::Enable_and_Disable::Enable);
-            W2_.beginning(maidui3_hal::fdcan::Enable_and_Disable::Enable);
+            ll_fdcan.Timeout(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
+            ll_fdcan.Tx_Callback(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
+            ll_fdcan.Rx_Callback(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
+            ll_fdcan.beginning(maidui3_hal::fdcan::Enable_and_Disable::Enable, hfdcanx_);
 
         }
     }
@@ -28,19 +28,31 @@ namespace gn10_can{
 
 namespace maidui3_hal{
     namespace fdcan{
-        fdcan_state_TypeDef FDCANfunction::Timeout(Enable_and_Disable state_){
+        fdcan_state_TypeDef FDCANfunction::Timeout(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_){
+            if(state_ == Enable_and_Disable::Enable){
+
+            }else{
+                
+            }
+        }
+
+        fdcan_state_TypeDef FDCANfunction::beginning(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_){
+            if(state_ == Enable_and_Disable::Enable){
+                if(HAL_FDCAN_Start(hfdcanx_) == HAL_OK){
+                    return fdcan_state_TypeDef::ERROR;
+                }
+            }else{
+                if(HAL_FDCAN_Stop(hfdcanx_) == HAL_OK){
+                    return fdcan_state_TypeDef::ERROR;
+                }
+            }
+        }
+
+        fdcan_state_TypeDef FDCANfunction::Tx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_){
 
         }
 
-        fdcan_state_TypeDef FDCANfunction::beginning(Enable_and_Disable state_){
-
-        }
-
-        fdcan_state_TypeDef FDCANfunction::Tx_Callback(Enable_and_Disable state_){
-
-        }
-
-        fdcan_state_TypeDef FDCANfunction::Rx_Callback(Enable_and_Disable state_){
+        fdcan_state_TypeDef FDCANfunction::Rx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_){
 
         }
 

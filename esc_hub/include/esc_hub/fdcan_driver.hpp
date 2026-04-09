@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "esc_hub/fdcan_driver.hpp"
+#include "esc_hub/fdcan_config.hpp"
 #include "gn10_can/drivers/driver_interface.hpp"
 #include "stm32h5xx_hal_fdcan.h"
 
@@ -19,7 +19,7 @@ public:
 private:
     FDCAN_HandleTypeDef* hfdcanx_;
 
-    maidui3_hal::fdcan::FDCANfunction W2_;
+    maidui3_hal::fdcan::FDCANfunction ll_fdcan;
 };
 }  // namespace drivers
 }  // namespace gn10_can
@@ -29,10 +29,10 @@ namespace fdcan {
 class FDCANfunction
 {
 public:
-    fdcan_state_TypeDef Timeout(Enable_and_Disable state_);
-    fdcan_state_TypeDef beginning(Enable_and_Disable state_);
-    fdcan_state_TypeDef Tx_Callback(Enable_and_Disable state_);
-    fdcan_state_TypeDef Rx_Callback(Enable_and_Disable state_);
+    fdcan_state_TypeDef Timeout(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
+    fdcan_state_TypeDef beginning(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
+    fdcan_state_TypeDef Tx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
+    fdcan_state_TypeDef Rx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
 };
 }  // namespace fdcan
 }  // namespace maidui3_hal
