@@ -4,6 +4,9 @@ enable_language(C CXX ASM)
 
 add_library(esc_hub STATIC
     src/app.cpp
+    src/fdcan_driver.cpp
+    src/flash.cpp
+    src/usb_fs.cpp
 )
 
 target_include_directories(esc_hub PUBLIC
