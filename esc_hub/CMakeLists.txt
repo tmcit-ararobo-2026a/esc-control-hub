@@ -2,20 +2,15 @@ cmake_minimum_required(VERSION 3.22)
 
 enable_language(C CXX ASM)
 
-add_subdirectory(Driver/FDCAN)
-add_subdirectory(Driver/FLASH)
-add_subdirectory(Driver/USB)
-
-add_subdirectory(main_FW)
-
-set(app_Include_Dirs
-    ${CMAKE_CURRENT_SOURCE_DIR}
+add_library(esc_hub STATIC
+    src/app.cpp
 )
 
-set(app_App_Dirs
-    ${CMAKE_CURRENT_SOURCE_DIR}/HEADER_INCLUDE.cpp
+target_include_directories(esc_hub PUBLIC
+    include
 )
 
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${app_App_Dirs})
+target_compile_features(esc_hub PUBLIC cxx_std_17)
 
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${app_Include_Dirs})
+target_link_libraries(esc_hub PRIVATE gn10_can)
+target_link_libraries(esc_hub PRIVATE stm32cubemx)
