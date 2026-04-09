@@ -2,8 +2,8 @@
 #pragma once
 
 #include "esc_hub/fdcan_config.hpp"
+#include "fdcan.h"
 #include "gn10_can/drivers/driver_interface.hpp"
-#include "stm32h5xx_hal_fdcan.h"
 
 namespace gn10_can {
 namespace drivers {
