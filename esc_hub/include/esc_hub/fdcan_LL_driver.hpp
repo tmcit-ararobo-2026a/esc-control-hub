@@ -9,10 +9,13 @@ namespace fdcan {
 class FDCANfunction
 {
 public:
-    fdcan_state_TypeDef Timeout(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
-    fdcan_state_TypeDef beginning(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
-    fdcan_state_TypeDef Tx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
-    fdcan_state_TypeDef Rx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_);
+    fdcan_state_TypeDef Timeout(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+    fdcan_state_TypeDef beginning(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+    fdcan_state_TypeDef Tx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+    fdcan_state_TypeDef Rx_Callback(Enable_and_Disable state_, FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
+
+private:
+    State_HandleTypeDef State;
 };
 }  // namespace fdcan
 }  // namespace maidui3_hal
