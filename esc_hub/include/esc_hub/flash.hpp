@@ -14,6 +14,8 @@ public:
     State Read();
 
 private:
+    XSPI_RegularCmdTypeDef Cmd   = {0};
+    XSPI_MemoryMappedTypeDef Map = {0};
 };
 
 };  // namespace QuadSPI
