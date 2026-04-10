@@ -2,14 +2,17 @@
 #pragma once
 #include <cstdint>
 
-class mFLASHtemplate{
-    public:
-        enum class State : uint8_t{
-            Standby,
-            Writetting,
-            Reading,
-        };
+namespace maidui3_hal {
+namespace QuadSPI {
+
+enum class State : uint8_t {
+    Standby,
+    Writetting,
+    Reading,
 };
+
+}  // namespace QuadSPI
+}  // namespace maidui3_hal
 
 /**
  * IO0 : SI
