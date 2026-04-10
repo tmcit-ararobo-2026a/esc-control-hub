@@ -9,7 +9,7 @@ namespace fdcan {
 class FDCAN
 {
 public:
-    fdcan_state_TypeDef init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_);
+    fdcan_state_TypeDef init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_ = 0);
 
     fdcan_state_TypeDef timeout_enable(FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_);
 
