@@ -3,7 +3,7 @@
 #include <cstdint>
 
 namespace maidui3_hal {
-namespace QuadSPI {
+namespace XSPI {
 
 enum class State : uint8_t {
     Standby,
@@ -11,7 +11,7 @@ enum class State : uint8_t {
     Reading,
 };
 
-}  // namespace QuadSPI
+}  // namespace XSPI
 }  // namespace maidui3_hal
 
 /**

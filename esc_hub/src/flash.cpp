@@ -1,7 +1,7 @@
 #include "esc_hub/flash.hpp"
 
 namespace maidui3_hal {
-namespace QuadSPI {
+namespace XSPI {
 
 State flash::Init() {}
 
@@ -38,7 +38,7 @@ State flash::Write()
 
 State flash::Read() {}
 
-}  // namespace QuadSPI
+}  // namespace XSPI
 }  // namespace maidui3_hal
 
 /*stm32h5xx_hal_xspi.h*/

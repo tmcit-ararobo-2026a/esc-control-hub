@@ -4,7 +4,7 @@
 #include <cstdint>
 
 namespace maidui3_hal {
-namespace QuadSPI {
+namespace XSPI {
 
 typedef struct {
     uint32_t addr;
@@ -14,5 +14,5 @@ typedef struct {
 typedef struct {
 } reg;
 
-}  // namespace QuadSPI
+}  // namespace XSPI
 }  // namespace maidui3_hal

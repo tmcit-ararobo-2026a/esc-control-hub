@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 add_library(esc_hub STATIC
     src/app.cpp
-    src/fdcan_ll_driver.cpp
+    src/fdcan_hal_driver.cpp
     src/fdcan_driver.cpp
     src/flash.cpp
     src/usb_fs.cpp

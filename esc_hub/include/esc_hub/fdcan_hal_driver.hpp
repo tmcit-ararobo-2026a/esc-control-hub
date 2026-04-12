@@ -1,7 +1,7 @@
 
 #pragma once
 
-#include "esc_hub/fdcan_ll_config.hpp"
+#include "esc_hub/fdcan_hal_config.hpp"
 #include "fdcan.h"
 
 namespace maidui3_hal {

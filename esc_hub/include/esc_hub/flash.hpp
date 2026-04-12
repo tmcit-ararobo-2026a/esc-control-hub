@@ -4,21 +4,26 @@
 #include "octospi.h"
 
 namespace maidui3_hal {
-namespace QuadSPI {
+namespace XSPI {
 
 class flash
 {
 public:
-    State Init();
-    State Write();
-    State Read();
+    State Init(XSPI_HandleTypeDef hxspix_);
+
+    State SPI_Write();
+    State SPI_Read();
+
+    State QSPI_Write();
+    State QSPI_Read();
 
 private:
-    XSPI_RegularCmdTypeDef Cmd   = {0};
-    XSPI_MemoryMappedTypeDef Map = {0};
+    XSPI_RegularCmdTypeDef Cmd_   = {0};
+    XSPI_MemoryMappedTypeDef Map_ = {0};
+    XSPI_HandleTypeDef hxspix_    = {0};
 };
 
-};  // namespace QuadSPI
+};  // namespace XSPI
 };  // namespace maidui3_hal
 
-extern maidui3_hal::QuadSPI::flash Flash;
+extern maidui3_hal::XSPI::flash Flash;

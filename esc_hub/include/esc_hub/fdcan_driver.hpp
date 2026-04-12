@@ -1,8 +1,8 @@
 
 #pragma once
 
+#include "esc_hub/fdcan_hal_driver.hpp"
 #include "fdcan.h"
-#include "fdcan_ll_driver.hpp"
 #include "gn10_can/drivers/fdcan_driver_interface.hpp"
 
 namespace gn10_can {
