@@ -63,6 +63,8 @@ fdcan_state_TypeDef FDCAN::init(FDCAN_HandleTypeDef* hfdcanx_, bool fifo_)
     if (beginning_enable(hfdcanx_) == fdcan_state_TypeDef::Error) {
         return fdcan_state_TypeDef::Error;
     }
+
+    return fdcan_state_TypeDef::Complete;
 }
 
 fdcan_state_TypeDef FDCAN::timeout_enable(FDCAN_HandleTypeDef* hfdcanx_, Fifo_Type fifo_)
