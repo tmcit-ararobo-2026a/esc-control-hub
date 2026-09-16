@@ -65,7 +65,7 @@ uint8_t get_device_id_by_dip_switch()
 }
 // CAN Drivers
 gn10_can::drivers::FDCANDriver fdcan1_driver(&hfdcan1);
-gn10_can::drivers::CANDriver can2_driver(&hfdcan2);
+gn10_can::drivers::CANDriver can2_driver(&hfdcan2, FDCAN_RX_FIFO1);
 // CAN Bus
 gn10_can::FDCANBus fdcan1_bus(fdcan1_driver);
 // CAN Devices
@@ -235,7 +235,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 {
     (void)RxFifo0ITs;
     if (process_fdcan_fifo(hfdcan, &hfdcan1, fdcan1_bus, FDCAN_RX_FIFO0)) return;
-    if (process_fdcan_fifo(hfdcan, &hfdcan2, c6x0, FDCAN_RX_FIFO0)) return;
 }
 
 /**
@@ -244,7 +243,6 @@ void HAL_FDCAN_RxFifo0Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo0ITs)
 void HAL_FDCAN_RxFifo1Callback(FDCAN_HandleTypeDef* hfdcan, uint32_t RxFifo1ITs)
 {
     (void)RxFifo1ITs;
-    if (process_fdcan_fifo(hfdcan, &hfdcan1, fdcan1_bus, FDCAN_RX_FIFO1)) return;
     if (process_fdcan_fifo(hfdcan, &hfdcan2, c6x0, FDCAN_RX_FIFO1)) return;
 }
 
