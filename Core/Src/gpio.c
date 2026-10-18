@@ -66,27 +66,27 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LIM4_1_Pin LIM4_2_Pin */
-  GPIO_InitStruct.Pin = LIM4_1_Pin|LIM4_2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  /*Configure GPIO pins : LIM4_1_Pin LIM4_2_Pin ID_4_SW_Pin */
+  GPIO_InitStruct.Pin = LIM4_1_Pin|LIM4_2_Pin|ID_4_SW_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LIM1_1_Pin LIM1_2_Pin */
-  GPIO_InitStruct.Pin = LIM1_1_Pin|LIM1_2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  /*Configure GPIO pins : LIM1_1_Pin LIM1_2_Pin POWER_MONITOR_Pin */
+  GPIO_InitStruct.Pin = LIM1_1_Pin|LIM1_2_Pin|POWER_MONITOR_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LIM2_1_Pin LIM2_2_Pin */
   GPIO_InitStruct.Pin = LIM2_1_Pin|LIM2_2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : LIM3_1_Pin LIM3_2_Pin */
-  GPIO_InitStruct.Pin = LIM3_1_Pin|LIM3_2_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  /*Configure GPIO pins : LIM3_1_Pin LIM3_2_Pin ID_2_SW_Pin */
+  GPIO_InitStruct.Pin = LIM3_1_Pin|LIM3_2_Pin|ID_2_SW_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
@@ -97,24 +97,6 @@ void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   GPIO_InitStruct.Alternate = GPIO_AF0_TRACE;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : ID_4_SW_Pin */
-  GPIO_InitStruct.Pin = ID_4_SW_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(ID_4_SW_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : ID_2_SW_Pin */
-  GPIO_InitStruct.Pin = ID_2_SW_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(ID_2_SW_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : POWER_MONITOR_Pin */
-  GPIO_InitStruct.Pin = POWER_MONITOR_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(POWER_MONITOR_GPIO_Port, &GPIO_InitStruct);
 
 }
 
