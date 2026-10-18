@@ -52,48 +52,48 @@ bool is_limit_switch_active(uint8_t motor_id, uint8_t switch_id)
     if (switch_id < 1 || switch_id > 2) return false;
 
     GPIO_TypeDef* port = nullptr;
-    uint16_t pin = 0;
+    uint16_t pin       = 0;
     switch (motor_id) {
         case 0:
             if (switch_id == 1) {
                 port = LIM1_1_GPIO_Port;
-                pin = LIM1_1_Pin;
+                pin  = LIM1_1_Pin;
             } else {
                 port = LIM1_2_GPIO_Port;
-                pin = LIM1_2_Pin;
+                pin  = LIM1_2_Pin;
             }
             break;
         case 1:
             if (switch_id == 1) {
                 port = LIM2_1_GPIO_Port;
-                pin = LIM2_1_Pin;
+                pin  = LIM2_1_Pin;
             } else {
                 port = LIM2_2_GPIO_Port;
-                pin = LIM2_2_Pin;
+                pin  = LIM2_2_Pin;
             }
             break;
         case 2:
             if (switch_id == 1) {
                 port = LIM3_1_GPIO_Port;
-                pin = LIM3_1_Pin;
+                pin  = LIM3_1_Pin;
             } else {
                 port = LIM3_2_GPIO_Port;
-                pin = LIM3_2_Pin;
+                pin  = LIM3_2_Pin;
             }
             break;
         case 3:
             if (switch_id == 1) {
                 port = LIM4_1_GPIO_Port;
-                pin = LIM4_1_Pin;
+                pin  = LIM4_1_Pin;
             } else {
                 port = LIM4_2_GPIO_Port;
-                pin = LIM4_2_Pin;
+                pin  = LIM4_2_Pin;
             }
             break;
         default:
             return false;
     }
-    return HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_SET;
+    return HAL_GPIO_ReadPin(port, pin) == GPIO_PIN_RESET;
 }
 
 /**
@@ -225,19 +225,16 @@ void control_motors()
             } else {
                 currents[i] = pid[i].update(targets[i], feedbacks[i], MOTOR_CONTROL_PERIOD);
             }
-            bool forward_limit_stop = false;
+            bool forward_limit_stop   = false;
             uint8_t forward_switch_id = 0;
             motor_config[i].get_forward_limit_switch(forward_limit_stop, forward_switch_id);
-            bool reverse_limit_stop = false;
+            bool reverse_limit_stop   = false;
             uint8_t reverse_switch_id = 0;
             motor_config[i].get_reverse_limit_switch(reverse_limit_stop, reverse_switch_id);
 
-            const bool forward_limit_active =
-                forward_limit_stop && is_limit_switch_active(static_cast<uint8_t>(i), forward_switch_id);
-            const bool reverse_limit_active =
-                reverse_limit_stop && is_limit_switch_active(static_cast<uint8_t>(i), reverse_switch_id);
-            if ((currents[i] > 0.0f && forward_limit_active) ||
-                (currents[i] < 0.0f && reverse_limit_active)) {
+            const bool forward_limit_active = forward_limit_stop && is_limit_switch_active(static_cast<uint8_t>(i), forward_switch_id);
+            const bool reverse_limit_active = reverse_limit_stop && is_limit_switch_active(static_cast<uint8_t>(i), reverse_switch_id);
+            if ((currents[i] > 0.0f && forward_limit_active) || (currents[i] < 0.0f && reverse_limit_active)) {
                 currents[i] = 0.0f;
             }
         }
