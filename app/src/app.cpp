@@ -131,10 +131,10 @@ gn10_can::devices::ESCHubServer* server = nullptr;
 c6x0_can::C6XCAN c6x0(can2_driver);
 // Encoder
 std::array<gn10_motor::IncrementalEncoder, 4> encoders{
-    gn10_motor::IncrementalEncoder(4095, &htim8, TIM8),
-    gn10_motor::IncrementalEncoder(4095, &htim1, TIM1),
-    gn10_motor::IncrementalEncoder(4095, &htim3, TIM3),
-    gn10_motor::IncrementalEncoder(4095, &htim4, TIM4)
+    gn10_motor::IncrementalEncoder(4000, &htim8, TIM8),
+    gn10_motor::IncrementalEncoder(4000, &htim1, TIM1),
+    gn10_motor::IncrementalEncoder(4000, &htim3, TIM3),
+    gn10_motor::IncrementalEncoder(4000, &htim4, TIM4)
 };
 
 void send_feedback_data(const std::array<float, 4>& feedback_data)
