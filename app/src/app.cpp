@@ -21,7 +21,7 @@ namespace {
 constexpr float MOTOR_CONTROL_PERIOD            = 0.001f;
 constexpr uint32_t HEARTBEAT_TOGGLE_INTERVAL_MS = 500;
 constexpr uint32_t TARGET_LAST_UPDATE_TIME_MS   = 500;
-constexpr uint32_t SEND_ANGLAR_DATA_INTERVAL_MS = 10;
+constexpr uint32_t SEND_ANGLAR_DATA_INTERVAL_MS = 50;
 constexpr float C610_MAX_CURRENT                = 10.0f;
 constexpr float C620_MAX_CURRENT                = 20.0f;
 uint32_t heartbeat_last_toggle_time_ms          = 0;
