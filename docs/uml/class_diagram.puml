@@ -1,0 +1,120 @@
+@startuml class_diagram
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+package "gn10_can Driver Layer" {
+    interface ICANDriver {
+        +init() : bool
+        +send(frame) : bool
+    }
+
+    class FDCANDriver {
+        -hfdcan_ : FDCAN_HandleTypeDef*
+        +init() : bool
+        +send(frame) : bool
+    }
+
+    class CANDriver {
+        -hfdcan_ : FDCAN_HandleTypeDef*
+        -rx_fifo_ : uint32_t
+        +init() : bool
+        +send(frame) : bool
+    }
+
+    ICANDriver <|.. FDCANDriver
+    ICANDriver <|.. CANDriver
+}
+
+package "gn10_can Protocol" {
+    class FDCANBus {
+        -driver_ : ICANDriver&
+        +init() : void
+        +process_rx() : void
+    }
+
+    class ESCHubServer {
+        -bus_ : FDCANBus&
+        -device_id_ : uint8_t
+        +get_targets(targets: float*) : bool
+        +get_init(motor_idx: int, config: MotorConfig&) : bool
+        +get_gains(motor_idx: int, kp, ki, kd, ff) : bool
+        +set_feedbacks(feedbacks: const float*) : void
+    }
+
+    class MotorConfig {
+        +get_motor_type() : MotorType
+        +get_encoder_type() : EncoderType
+        +get_forward_limit_switch(stop: bool&, id: uint8_t&) : void
+        +get_reverse_limit_switch(stop: bool&, id: uint8_t&) : void
+    }
+
+    FDCANBus o-- ICANDriver
+    ESCHubServer o-- FDCANBus
+    ESCHubServer ..> MotorConfig
+}
+
+package "ESC Driver (C610 / C620)" {
+    class C6XCAN {
+        -can_driver_ : ICANDriver&
+        -feedback_ : array<C620Feedback, 8>
+        +set_motor_type(motor_idx: int, type: MotorType) : void
+        +set_currents_1_4(currents: array<float, 4>&) : bool
+        +get_feedback_angle(motor_id: uint8_t) : uint16_t
+        +get_feedback_speed(motor_id: uint8_t) : int16_t
+        +get_feedback_current(motor_id: uint8_t) : int16_t
+        +update() : void
+    }
+
+    C6XCAN o-- ICANDriver
+}
+
+package "Motor & Control" {
+    class IncrementalEncoder {
+        -htim_ : TIM_HandleTypeDef*
+        -tim_instance_ : TIM_TypeDef*
+        -cpr_ : uint32_t
+        +hardware_init() : void
+        +read_and_reset_count() : int32_t
+        +count_to_angular_velocity(count, dt) : float
+        +accumulate_angle_rad(count) : float
+        +reset() : void
+    }
+
+    class "PID<float>" as PID {
+        -config_ : PIDConfig<float>
+        -integral_ : float
+        -previous_error_ : float
+        +set_config(config: PIDConfig<float>) : void
+        +update(target: float, feedback: float, dt: float) : float
+        +reset(initial_value: float) : void
+    }
+
+    struct "PIDConfig<float>" as PIDConfig {
+        +kp : float
+        +ki : float
+        +kd : float
+        +output_limit : float
+        +integral_limit : float
+    }
+
+    PID *-- PIDConfig
+}
+
+package "Application Logic (app.cpp)" {
+    class AppController <<Singleton / Module>> {
+        +setup() : void
+        +loop() : void
+        +control_motors() : void
+        +send_feedback_data(feedbacks) : void
+        +is_limit_switch_active(motor_id, sw_id) : bool
+    }
+
+    AppController o-- ESCHubServer
+    AppController o-- C6XCAN
+    AppController o-- "4" IncrementalEncoder
+    AppController o-- "4" PID
+    AppController ..> MotorConfig
+}
+
+@enduml

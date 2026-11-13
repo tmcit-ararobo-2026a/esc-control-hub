@@ -1,0 +1,64 @@
+@startuml system_architecture
+!theme plain
+skinparam componentStyle uml2
+skinparam shadowing false
+
+package "Host System" {
+    [Main Controller / ROS 2] as Host
+}
+
+cloud "Control CAN Bus (CAN FD)\n[gn10-can Protocol]" as ControlCAN
+
+node "ESC Control Hub (STM32H563RGV6)" {
+    interface "FDCAN1 (Isolated Transceiver)" as IF_FDCAN1
+    interface "FDCAN2 (Non-isolated)" as IF_FDCAN2
+    
+    package "Firmware" {
+        [ESCHubServer\n(gn10_can)] as Server
+        [Motor Controller\n(PID / Limit Switch)] as Controller
+        [C6XCAN\n(C610/C620 Driver)] as C6X
+    }
+
+    portin "Limit SW (LIM1~4 x2)" as Port_LIM
+    portin "Encoder (TIM1, 3, 4, 8)" as Port_ENC
+    portin "DIP Switch (Device ID)" as Port_DIP
+}
+
+cloud "Drive CAN Bus (CAN 2.0B 1Mbps)\n[DJI C610/C620 Protocol]" as DriveCAN
+
+package "Actuators" {
+    node "DJI ESC (C610 / C620)" as ESC1
+    node "DJI ESC (C610 / C620)" as ESC2
+    node "DJI ESC (C610 / C620)" as ESC3
+    node "DJI ESC (C610 / C620)" as ESC4
+
+    [BLDC Motor 1] as M1
+    [BLDC Motor 2] as M2
+    [BLDC Motor 3] as M3
+    [BLDC Motor 4] as M4
+}
+
+Host <--> ControlCAN
+ControlCAN <--> IF_FDCAN1
+IF_FDCAN1 <--> Server
+
+Server <--> Controller : Target / Feedback
+Controller <--> C6X : Current Cmd / Telemetry
+Port_LIM --> Controller : Limit SW Active
+Port_ENC --> Controller : Pulse Count
+Port_DIP --> Server : Device ID
+
+C6X <--> IF_FDCAN2
+IF_FDCAN2 <--> DriveCAN
+
+DriveCAN <--> ESC1
+DriveCAN <--> ESC2
+DriveCAN <--> ESC3
+DriveCAN <--> ESC4
+
+ESC1 --> M1
+ESC2 --> M2
+ESC3 --> M3
+ESC4 --> M4
+
+@enduml

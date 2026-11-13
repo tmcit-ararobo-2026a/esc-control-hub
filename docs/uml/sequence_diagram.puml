@@ -1,0 +1,46 @@
+@startuml sequence_diagram
+!theme plain
+autonumber
+skinparam shadowing false
+
+actor "Host Controller" as Host
+participant "FDCAN1 (gn10-can)" as Bus1
+participant "ESCHubServer" as Server
+participant "Main Loop / Timer6" as Main
+participant "PID & Encoders" as Control
+participant "C6XCAN" as C6X
+participant "FDCAN2 (DJI CAN)" as Bus2
+participant "C610 / C620 ESC" as ESC
+
+== Initialization Sequence ==
+Host -> Bus1 : Init Command (MotorConfig)
+Bus1 -> Server : Store Config
+Host -> Bus1 : Set PID Gains Command
+Bus1 -> Server : Store Gains
+
+== 1kHz Control Loop ==
+loop 1ms Period (TIM6 Interrupt)
+    Main -> Control : Read Feedback (Angle / Velocity)\n(TIM Encoder or C6XCAN)
+    Main -> Server : Get Latest Targets (get_targets)
+    alt Timeout (> 500ms)
+        Main -> Control : Emergency Stop (Current = 0A)
+    else Normal
+        Main -> Control : PID Update & Limit SW Check
+    end
+    Main -> C6X : Set Target Currents (set_currents_1_4)
+    C6X -> Bus2 : Transmit CAN Frame (ID 0x200)
+    Bus2 -> ESC : Forward Current Command
+end
+
+== ESC Telemetry Update (CAN Rx FIFO1 Interrupt) ==
+ESC -> Bus2 : Motor Status Frame (Angle, Velocity, Current)
+Bus2 -> C6X : Update Internal State via Rx Callback
+
+== Feedback Transmission (50ms Period) ==
+loop 50ms Period
+    Main -> Server : Register Feedback Array (set_feedbacks)
+    Server -> Bus1 : Send Packet (gn10-can format)
+    Bus1 -> Host : Receive Angular / Velocity Telemetry
+end
+
+@enduml
