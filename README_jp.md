@@ -26,6 +26,8 @@ C610/C620などのESCのCANバスは駆動系統と絶縁されておらず、�
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | 開発フロー・コミット規約・コーディング規約 |
 | [docs/requirements-definition.md](./docs/requirements-definition.md) | 要件定義書（ハードウェア・通信・I/O仕様） |
 | [docs/coding-rules.md](./docs/coding-rules.md) | コーディング規約 |
+| [docs/esc-control-hub-Sch.png](./docs/esc-control-hub-Sch.png) | 回路図 |
+| [docs/esc-control-hub-PCB.png](./docs/esc-control-hub-PCB.png) | PCBレイアウト図 |
 | [docs/uml/](./docs/uml/) | PlantUML ソースファイル |
 
 ## 3. コントリビューション
@@ -91,14 +93,22 @@ ST-Link を接続し、以下のいずれかで書き込む。
 ![システム構成図](./docs/uml/system_architecture.png)
 *(PlantUML ソース: [system_architecture.puml](./docs/uml/system_architecture.puml))*
 
-### 5.2 クラス設計
+### 5.2 ハードウェア設計
+
+#### 回路図
+![回路図](./docs/esc-control-hub-Sch.png)
+
+#### PCB
+![PCBレイアウト](./docs/esc-control-hub-PCB.png)
+
+### 5.3 クラス設計
 
 `app.cpp` を中心とした主要モジュールの依存関係を示す。
 
 ![クラス図](./docs/uml/class_diagram.png)
 *(PlantUML ソース: [class_diagram.puml](./docs/uml/class_diagram.puml))*
 
-### 5.3 制御シーケンス
+### 5.4 制御シーケンス
 
 TIM6 の 1kHz 割り込みで制御ループを実行。指令途絶時はフェールセーフとして出力を遮断する。
 

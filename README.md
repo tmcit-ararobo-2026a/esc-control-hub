@@ -26,6 +26,8 @@ ESC Control Hub provides electrical bus isolation, protocol translation, 1 kHz P
 | [CONTRIBUTING.md](./CONTRIBUTING.md) | Development workflow, branching rules, and commit conventions |
 | [docs/requirements-definition.md](./docs/requirements-definition.md) | Hardware, communication, and I/O specifications |
 | [docs/coding-rules.md](./docs/coding-rules.md) | Coding style and conventions |
+| [docs/esc-control-hub-Sch.png](./docs/esc-control-hub-Sch.png) | Schematic diagram |
+| [docs/esc-control-hub-PCB.png](./docs/esc-control-hub-PCB.png) | PCB layout |
 | [docs/uml/](./docs/uml/) | PlantUML diagram source files |
 
 ## 3. Contributing
@@ -91,14 +93,22 @@ Bridges the host controller and DJI ESCs to provide electrical isolation, protoc
 ![System Architecture](./docs/uml/system_architecture.png)
 *(PlantUML source: [system_architecture.puml](./docs/uml/system_architecture.puml))*
 
-### 5.2 Class Design
+### 5.2 Hardware Design
+
+#### Schematic
+![Schematic](./docs/esc-control-hub-Sch.png)
+
+#### PCB
+![PCB Layout](./docs/esc-control-hub-PCB.png)
+
+### 5.3 Class Design
 
 Illustrates dependency relations centered around the `AppController` module.
 
 ![Class Diagram](./docs/uml/class_diagram.png)
 *(PlantUML source: [class_diagram.puml](./docs/uml/class_diagram.puml))*
 
-### 5.3 Control Sequence
+### 5.4 Control Sequence
 
 Executes a 1 kHz control loop triggered by TIM6 interrupt with fail-safe output shutdown on timeout.
 
