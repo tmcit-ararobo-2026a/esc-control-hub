@@ -10,8 +10,8 @@ package "Host System" {
 cloud "Control CAN Bus (CAN FD)\n[gn10-can Protocol]" as ControlCAN
 
 node "ESC Control Hub (STM32H563RGV6)" {
-    interface "FDCAN1 (Isolated Transceiver)" as IF_FDCAN1
-    interface "FDCAN2 (Non-isolated)" as IF_FDCAN2
+    interface "FDCAN1 (Non-isolated)" as IF_FDCAN1
+    interface "FDCAN2 (Isolated Transceiver)" as IF_FDCAN2
     
     package "Firmware" {
         [ESCHubServer\n(gn10_can)] as Server
